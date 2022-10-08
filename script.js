@@ -1,6 +1,6 @@
 let btn = document.getElementById("special");
 let dataele = document.getElementById("data")
-dataele.document.innerText("my name is sia")
+// dataele.document.innerText("my name is sia")
 
 btn.addEventListener("click", loadData)
 
@@ -12,7 +12,10 @@ function loadData() {
         dataele.innerText = "on loading...."
     }
     xhr.onload = function () {
-        dataele.innertext = xhr.responseText;
+        let result = xhr.responseText;//here we get the value in the form of string
+        result = JSON.parse(result)//so here we will convert the string to object
+        console.log(result);
+        console.log(typeof (result))
 
     }
 }
